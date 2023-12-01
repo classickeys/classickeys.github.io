@@ -1,0 +1,66 @@
+body{
+    background-color: rgb(76, 76, 76); 
+    color:ghostwhite;
+}
+
+nav{
+    
+}
+
+.nav-left{
+    display: inline-block;
+}
+
+.nav-right{
+    display: inline-block;
+}
+
+nav ul{
+    list-style: none;
+    height: 50px;
+    
+}
+
+nav li{
+    display: inline;
+    
+    
+}
+nav li a{
+    text-decoration: none;
+    padding: 8px;
+}
+.about{
+    padding: 2% 0;
+    background-color: rgb(231, 231, 231);
+}
+
+.about-img{
+    display: inline-block;
+    padding: 5%;
+    line-height: normal;
+    vertical-align: middle;
+    
+}
+
+.about-text{
+    background-color: rgb(148, 148, 148); 
+    width: 45vw; 
+    height: auto;
+    display: inline-block;
+    padding: 7% 5%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: normal;
+    vertical-align: middle;
+    
+}
+
+
+.about-img img{
+    width: 30vw;
+    height: auto;
+    
+    border-radius: 10%;
+    
+}
