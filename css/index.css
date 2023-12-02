@@ -1,66 +1,187 @@
-body{
-    background-color: rgb(76, 76, 76); 
-    color:ghostwhite;
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+body {
+  background-color: rgb(38, 38, 38);
+  color: rgb(82, 82, 82);
+  font-family: "Oswald", sans-serif;
 }
 
-nav{
-    
+nav {
+  font-family: "Kanit", sans-serif;
+  height: max-content;
+  color: ghostwhite;
+  line-height: normal;
+  vertical-align: middle;
 }
 
-.nav-left{
-    display: inline-block;
+nav li a:visited {
+  color: ghostwhite;
 }
 
-.nav-right{
-    display: inline-block;
+nav li a:link {
+  color: ghostwhite;
 }
 
-nav ul{
-    list-style: none;
-    height: 50px;
-    
+.nav-left {
+  display: inline-block;
+  width: 45%;
+  margin-left: 2%;
+  font-size: 1.5rem;
 }
 
-nav li{
-    display: inline;
-    
-    
-}
-nav li a{
-    text-decoration: none;
-    padding: 8px;
-}
-.about{
-    padding: 2% 0;
-    background-color: rgb(231, 231, 231);
+.nav-right {
+  display: inline-block;
+  font-weight: 200;
+  text-align: right;
+  width: 45%;
 }
 
-.about-img{
-    display: inline-block;
-    padding: 5%;
-    line-height: normal;
-    vertical-align: middle;
-    
+.nav-right li {
+  margin-left: 4%;
+  font-size: 1.2rem;
 }
 
-.about-text{
-    background-color: rgb(148, 148, 148); 
-    width: 45vw; 
-    height: auto;
-    display: inline-block;
-    padding: 7% 5%;
-    margin: 0 auto;
-    text-align: center;
-    line-height: normal;
-    vertical-align: middle;
-    
+nav ul {
+  list-style: none;
+  height: 100%;
 }
 
+nav li {
+  display: inline;
+  height: 100%;
+}
+nav li a {
+  text-decoration: none;
+  padding: 12px 16px;
+}
 
-.about-img img{
-    width: 30vw;
-    height: auto;
-    
-    border-radius: 10%;
-    
+nav li a:hover {
+  background-color: hsla(240, 100%, 99%, 0.7);
+  color: rgb(38, 38, 38);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.about {
+  padding: 2% 0;
+  background-color: rgb(231, 231, 231);
+  position: relative;
+  width: 100%;
+  height: max-content;
+  overflow: hidden;
+}
+
+.about-img {
+  display: inline-block;
+  padding: 5%;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+#profile-img {
+  transition: filter 0.3s ease;
+  transition: scale 0.3s ease;
+}
+
+#profile-img:hover {
+  filter: grayscale(100%);
+  scale: 110%;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0); /* Bounce up and down */
+  }
+  40% {
+    transform: translateY(-30px); /* Bounce up */
+  }
+  60% {
+    transform: translateY(-15px); /* Bounce down */
+  }
+  80% {
+    transform: translateY(-5px); /* Bounce up */
+  }
+}
+
+#profile-img.bounce {
+  animation: bounce 0.5s; /* Apply the bounce animation */
+}
+
+.about-text {
+  width: 45vw;
+  height: auto;
+  display: inline-block;
+  padding: 7% 5%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: normal;
+  vertical-align: middle;
+}
+.loading-text {
+  overflow: hidden; /* Hide overflowing content */
+  white-space: nowrap;
+}
+
+.background {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgb(99, 99, 99) 38, 38),
+    rgb(220, 220, 220);
+  background-size: cover;
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.about-img img {
+  width: 30vw;
+  height: auto;
+
+  border-radius: 10%;
+}
+
+.buttons {
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  background-color: rgb(38, 38, 38);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.7rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buttons:hover {
+  background-color: ghostwhite;
+  color: rgb(38, 38, 38);
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.buttons:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+.buttons::before {
+  content: "\01F57E"; /* Telephone */
+  margin-right: 5px;
 }
