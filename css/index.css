@@ -158,8 +158,14 @@ nav li a:hover {
   25% {
     transform: translate(80vw, +1500%);
   }
+  27% {
+    transform: translate(81vw, +1500%);
+  }
   50% {
     transform: translate(55vw, +0%);
+  }
+  52% {
+    transform: translate(56vw, +0%);
   }
   75% {
     transform: translate(30vw, +1500%);
