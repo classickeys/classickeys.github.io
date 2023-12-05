@@ -4,6 +4,7 @@ body {
   background-color: rgb(38, 38, 38);
   color: rgb(82, 82, 82);
   font-family: "Oswald", sans-serif;
+  overflow-x: hidden; 
 }
 
 nav {
@@ -293,4 +294,141 @@ nav li a:hover {
 .social-icons{
   height: 25px;
   width: 25px;
+  transition: scale ease-in-out 3s;
+  
 }
+
+.social-icons:hover{
+  scale: 120%;
+}
+
+.side-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  transform: translateX(-250px); /* Initial position off-screen */
+  transition: transform 2s ease; /* Slide-in transition effect */
+
+}
+
+.menu-button {
+  display: none;
+  cursor: pointer;
+}
+
+.side-menu.menu-open {
+  transform: translateX(0); 
+}
+
+/* Hamburger menu styles for smaller screens */
+@media only screen and (max-width: 768px) {
+  nav li a {
+    display: block;
+    padding: 0 ;
+    width: 100vw;
+    text-wrap: nowrap;
+
+  }
+
+  .menu-button {
+    display: inline-block;
+    text-align: center;
+    padding: 1%;
+    line-height: normal;
+}
+
+
+  .nav-left,
+  .nav-right {
+    width: 100%;
+    text-align: center;
+    
+    display: block;
+  }
+
+  .nav-left li,
+  .nav-right li {
+    margin: 0;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .nav-right ul, .nav-left ul{
+    padding: 0;
+
+  }
+
+  .nav-right ul{
+    
+    display: none;
+  }
+
+  .about-img img {
+    margin: 0 auto;
+    width: 80%; 
+    max-width: none; 
+    border-radius: 10%; 
+    
+  }
+  
+  .close-button {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: #555;
+  }
+
+  
+ 
+
+  .loading-text{
+    
+    text-wrap:wrap;
+  }
+
+  .about-text {
+    width: 100%;
+    padding: 7% 5%;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+  .buttons {
+    font-size: 0.6rem; /* Increase font size for better visibility */
+  }
+
+  .social {
+    text-align: center;
+    padding: 5%;
+  }
+
+  .social-icons {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1%;
+    
+  }
+
+  .social-icons:hover{
+    height: 2rem;
+    width: 2rem;
+    transition: height ease-in 0.1s, width ease-in 0.1s;
+  }
+
+
+  .about-img:hover::after {
+    font-size: 0.8rem;
+  }
+}
+

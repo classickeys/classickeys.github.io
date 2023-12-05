@@ -9,16 +9,19 @@
 </head>
 
 <body>
+    <header>
     <nav class="nav-left">
         <ul>
             <li>
                 <a href="#" target="" rel="noopener noreferrer">Kelechi Nwachukwu</a>
-                
+                <div class="menu-button" onclick="toggleMenu()">☰</div>
             </li>
         </ul>
     </nav>
 
     <nav class="nav-right">
+        
+
         <ul>
             <li>
                 <a href="#about" target="" rel="noopener noreferrer">About</a>
@@ -37,6 +40,16 @@
             </li>
         </ul>
     </nav>
+</header>
+    <div class="side-menu">
+        <span class="close-button" onclick="closeMenu()">&times;</span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
 
     <div class="about" id="about">
         <div class="background "></div>
@@ -73,6 +86,7 @@
     <div class="contact" id="contact"></div>
 
     <script src="js/about.js"></script>
+    <script src="js/side.js"></script>
 </body>
 
 </html>

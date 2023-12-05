@@ -1,12 +1,10 @@
 const filterImage = document.getElementById('profile-img');
 
         filterImage.addEventListener('mouseenter', () => {
-            filterImage.style.filter = 'grayscale(100%)';
             filterImage.classList.remove('bounce'); // Add the 'bounce' class
         });
 
         filterImage.addEventListener('mouseleave', () => {
-            filterImage.style.filter = 'none';
             filterImage.classList.add('bounce'); // Remove the 'bounce' class
         });
 
