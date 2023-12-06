@@ -10,6 +10,7 @@ const filterImage = document.getElementById('profile-img');
 
         document.addEventListener("DOMContentLoaded", function () {
             const elements = document.querySelectorAll('.loading-text');
+            const endElements = document.querySelectorAll('.end');
             let elementIndex = 0;
         
             function clearText(element) {
@@ -35,12 +36,19 @@ const filterImage = document.getElementById('profile-img');
                     loadTextOneLetterAtATime(elements[elementIndex]);
                     elementIndex++;
                 } else {
+                    // All elements have finished loading, show .end elements
+                    endElements.forEach(endElement => {
+                        endElement.style.display = 'block';
+                    });
+        
                     // Reset elementIndex to loop through the elements again
                     elementIndex = 0;
+        
                     // Clear text content for all elements
                     elements.forEach(clearText);
+        
                     // Start loading the text for the first element
-                    loadNextElement();
+                    setTimeout(loadNextElement, 500);
                 }
             }
         
@@ -51,6 +59,7 @@ const filterImage = document.getElementById('profile-img');
         
             loadNextElement();
         });
+        
         
 
 

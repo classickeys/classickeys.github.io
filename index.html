@@ -1,82 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kelechi's Portfolio</title>
     <link rel="stylesheet" href="css/index.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-    <nav class="nav-left">
+      <nav class="nav-left">
         <ul>
-            <li>
-                <a href="#" target="" rel="noopener noreferrer">Kelechi Nwachukwu</a>
-                <div class="menu-button" onclick="toggleMenu()">☰</div>
-            </li>
+          <li>
+            <a href="#" target="" rel="noopener noreferrer"
+              >Kelechi Nwachukwu</a
+            >
+          </li>
         </ul>
+      </nav>
+
+      <nav class="nav-right">
+        <ul>
+          <li>
+            <a href="#about" target="" rel="noopener noreferrer">About</a>
+          </li>
+
+          <li>
+            <a href="" target="_blank" rel="noopener noreferrer"
+              >Curiculum Vitae</a
+            >
+          </li>
+
+          <li>
+            <a href="" target="_blank" rel="noopener noreferrer">Projects</a>
+          </li>
+
+          <li>
+            <a href="" target="_blank" rel="noopener noreferrer">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="menu-button">
+        <ul>
+          <li>
+            <a onclick="toggleMenu()" rel="noopener noreferrer">☰</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <nav class="side-menu">
+      <span class="close-button" onclick="closeMenu()">&times;</span>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Curiculum Vitae</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
-
-    <nav class="nav-right">
-        
-
-        <ul>
-            <li>
-                <a href="#about" target="" rel="noopener noreferrer">About</a>
-            </li>
-
-            <li>
-                <a href="" target="_blank" rel="noopener noreferrer">Projects</a>
-            </li>
-
-            <li>
-                <a href="" target="_blank" rel="noopener noreferrer">Curiculum Vitae</a>
-            </li>
-
-            <li>
-                <a href="" target="_blank" rel="noopener noreferrer">Contact</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-    <div class="side-menu">
-        <span class="close-button" onclick="closeMenu()">&times;</span>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
 
     <div class="about" id="about">
-        <div class="background "></div>
-        <div class="bouncing-box"></div>
-        <div class="bouncing-box-left-to-right"></div>
-        <div class="about-img">
-            <img id="profile-img" src="assets/Profile.png" alt="Profile Picture" />
-        </div>
+      <div class="background"></div>
+      <div class="bouncing-box"></div>
+      <div class="bouncing-box-left-to-right"></div>
+      <div class="about-img">
+        <img id="profile-img" src="assets/Profile.png" alt="Profile Picture" />
+      </div>
 
-        <div class="about-text animate-text">
-            
-            <p class="loading-text">Hi...</p>
-            <h1 class="loading-text">My Name is Kelechi Nwachukwu</h1>
-            <p class="loading-text">I am  an aspiring full stack developer</p>
-            <button type="button" class="buttons">Contact Info</button>
-            
-            <div class="social">
+      <div class="about-text animate-text">
+        <p class="loading-text">Hi...</p>
+        <h1 class="loading-text">My Name is Kelechi Nwachukwu</h1>
+        <p class="loading-text">I am an aspiring full stack developer</p>
+        
+      </div>
 
-                <a href="http://instagram.com/itsclassickeys"><img class="social-icons" src="assets/camera.png" alt="instagram icon" /></a>
-            <a href="http://x.com/itsclassickeys"><img class="social-icons" src="assets/twitter.png" alt="x icon" /></a>
-            <a href="http://github.com/classickeys"><img class="social-icons" src="assets/github.png" alt="github icon" /></a>
-            <a href="http://linkedin.com/in/classickeys"><img class="social-icons" src="assets/linkedin.png" alt="linkedin icon" /></a>
-            </div>
-            
+      <div class="end">
+        <button type="button" class="buttons">Contact Info</button>
+
+        <div class="social">
+          <a href="http://instagram.com/itsclassickeys"
+            ><img
+              class="social-icons"
+              src="assets/camera.png"
+              alt="instagram icon"
+          /></a>
+          <a href="http://x.com/itsclassickeys"
+            ><img class="social-icons" src="assets/twitter.png" alt="x icon"
+          /></a>
+          <a href="http://github.com/classickeys"
+            ><img
+              class="social-icons"
+              src="assets/github.png"
+              alt="github icon"
+          /></a>
+          <a href="http://linkedin.com/in/classickeys"
+            ><img
+              class="social-icons"
+              src="assets/linkedin.png"
+              alt="linkedin icon"
+          /></a>
         </div>
-        
-        
+      </div>
     </div>
 
     <div class="projects" id="projects"></div>
@@ -87,6 +111,6 @@
 
     <script src="js/about.js"></script>
     <script src="js/side.js"></script>
-</body>
-
+    <script src="js/bounce.js"></script>
+  </body>
 </html>
