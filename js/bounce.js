@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var bouncingBox = document.querySelector('.bouncing-box');
 
     function getRandomAnimation() {
-      var animations = ['bounceAnimation', 'bounceAnimation1', 'bounceAnimation2', 'bounceAnimation3', 'bounceAnimation4'];
+      var animations = ['bounceAnimation', 'bounceAnimation1', 'bounceAnimation2', 'bounceAnimation3'];
       var randomIndex = Math.floor(Math.random() * animations.length);
       return animations[randomIndex];
     }

@@ -5,110 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kelechi's Portfolio</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
   </head>
 
   <body>
-    <header>
-      <nav class="nav-left">
+    <div id="loader-container">
+      <div id="loader-bar">
+        <div id="filler"></div>
+      </div>
+      <div id="loading-text"><h2>Welcome To My Portfolio</h2></div>
+    </div>
+
+    <div id="page-content" class="exitLoad">
+      <header>
+        <nav class="nav-left">
+          <ul>
+            <li>
+              <a href="#" target="" rel="noopener noreferrer"
+                >Kelechi Nwachukwu</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-right">
+          <ul>
+            <li>
+              <a href="#about" target="" rel="noopener noreferrer">About</a>
+            </li>
+
+            <li>
+              <a href="" target="_blank" rel="noopener noreferrer"
+                >Curiculum Vitae</a
+              >
+            </li>
+
+            <li>
+              <a href="" target="_blank" rel="noopener noreferrer">Projects</a>
+            </li>
+
+            <li>
+              <a href="" target="_blank" rel="noopener noreferrer">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="menu-button">
+          <ul>
+            <li>
+              <a onclick="toggleMenu()" rel="noopener noreferrer">☰</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <nav class="side-menu">
+        <span class="close-button" onclick="closeMenu()">&times;</span>
         <ul>
-          <li>
-            <a href="#" target="" rel="noopener noreferrer"
-              >Kelechi Nwachukwu</a
-            >
-          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Curiculum Vitae</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+    </div>
 
-      <nav class="nav-right">
-        <ul>
-          <li>
-            <a href="#about" target="" rel="noopener noreferrer">About</a>
-          </li>
-
-          <li>
-            <a href="" target="_blank" rel="noopener noreferrer"
-              >Curiculum Vitae</a
-            >
-          </li>
-
-          <li>
-            <a href="" target="_blank" rel="noopener noreferrer">Projects</a>
-          </li>
-
-          <li>
-            <a href="" target="_blank" rel="noopener noreferrer">Contact</a>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="menu-button">
-        <ul>
-          <li>
-            <a onclick="toggleMenu()" rel="noopener noreferrer">☰</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <nav class="side-menu">
-      <span class="close-button" onclick="closeMenu()">&times;</span>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Curiculum Vitae</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="about" id="about">
-      <div class="background"></div>
+    <div class="about section" id="about">
+      <div class="background" id="bg-color"></div>
       <div class="bouncing-box"></div>
       <div class="bouncing-box-left-to-right"></div>
+      <div id="neon-section"></div>
       <div class="about-img">
-        <img id="profile-img" src="assets/Profile.png" alt="Profile Picture" />
+        <img id="profile-img" src="assets/Profile.jpg" alt="Profile Picture" />
+        <img class="hover-image" id="hoverImg" src="assets/Profile1.jpg" alt="Profile Picture" />
       </div>
 
-      <div class="about-text animate-text">
+      <div class="about-text animate-text" id="about-txt">
         <p class="loading-text">Hi...</p>
         <h1 class="loading-text">My Name is Kelechi Nwachukwu</h1>
         <p class="loading-text">I am an aspiring full stack developer</p>
-        
-      </div>
 
-      <div class="end">
-        <button type="button" class="buttons">Contact Info</button>
 
-        <div class="social">
-          <a href="http://instagram.com/itsclassickeys"
-            ><img
-              class="social-icons"
-              src="assets/camera.png"
-              alt="instagram icon"
-          /></a>
-          <a href="http://x.com/itsclassickeys"
-            ><img class="social-icons" src="assets/twitter.png" alt="x icon"
-          /></a>
-          <a href="http://github.com/classickeys"
-            ><img
-              class="social-icons"
-              src="assets/github.png"
-              alt="github icon"
-          /></a>
-          <a href="http://linkedin.com/in/classickeys"
-            ><img
-              class="social-icons"
-              src="assets/linkedin.png"
-              alt="linkedin icon"
-          /></a>
+
+
+        <div class="end">
+          <div class="icon"></div>
+          <button type="button" class="buttons" id="buttonsC">Contact Info</button>
+  
+          <div class="social showSection">
+            <a href="http://instagram.com/itsclassickeys"
+              ><img
+                class="social-icons"
+                src="assets/camera.png"
+                alt="instagram icon"
+            /></a>
+            <a href="http://x.com/itsclassickeys"
+              ><img class="social-icons" src="assets/twitter.png" alt="x icon"
+            /></a>
+            <a href="http://github.com/classickeys"
+              ><img
+                class="social-icons"
+                src="assets/github.png"
+                alt="github icon"
+            /></a>
+            <a href="http://linkedin.com/in/classickeys"
+              ><img
+                class="social-icons"
+                src="assets/linkedin.png"
+                alt="linkedin icon"
+            /></a>
+          </div>
         </div>
       </div>
+
+      
     </div>
 
-    <div class="projects" id="projects"></div>
+    <div class="projects section off" id="projects"></div>
 
-    <div class="curiculum" id="curiculum"></div>
+    <div class="curiculum section off" id="curiculum"></div>
 
-    <div class="contact" id="contact"></div>
+    <div class="contact section off" id="contact"></div>
 
+    <script src="js/loading.js"></script>
+    <script src="js/neon.js"></script>
     <script src="js/about.js"></script>
     <script src="js/side.js"></script>
     <script src="js/bounce.js"></script>

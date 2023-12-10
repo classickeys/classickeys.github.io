@@ -7,6 +7,71 @@ body {
   overflow-x: hidden; 
 }
 
+#loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(231, 231, 231);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#loader-bar {
+  width: 40%;
+  border-radius: 2%;
+  height: 15px;
+  background-color: #ddd;
+  position: relative;
+  overflow: hidden;
+}
+
+#filler {
+  width: 0;
+  height: 100%;
+  background-color: rgb(38, 38, 38);;
+  animation: fillAnimation 3s forwards;
+}
+
+@keyframes fillAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+#loading-text {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+#page-content {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hidden {
+  display: block;
+  transition: opacity 0.5s ease;
+}
+
+.exitLoad {
+  display: block;
+}
+
+.off{
+  display: none;
+}
+
+
+
+
 header{
   padding: 1%;
   white-space: nowrap;
@@ -97,6 +162,11 @@ nav li a:hover {
   z-index: 1;
 }
 
+.section {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
 .about-img {
   position: relative;
   display: inline-block;
@@ -114,7 +184,7 @@ nav li a:hover {
   top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.509);
+  background: rgb(197, 141, 0, 0.531);
   color: rgb(231, 231, 231);
   padding: 5%;
   text-align: center;
@@ -129,14 +199,35 @@ nav li a:hover {
 
 #profile-img {
   display: block;
+  opacity: 80%;
   transition: filter 0.3s ease;
   transition: scale 0.3s ease;
 }
 
-#profile-img:hover {
+.hover-image:hover {
   filter: grayscale(100%);
   scale: 110%;
 }
+
+.about-img:hover img {
+  opacity: 0; /* Hide the original image on hover */
+}
+
+.about-img:hover .hover-image {
+  opacity: 1; /* Show the new image on hover */
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  margin: 0 auto;
+}
+
 
 @keyframes bounce {
   0%,
@@ -187,7 +278,7 @@ nav li a:hover {
   height: 50px;
   border-radius: 100%;
   background-color: #74747448;
-  animation: bounceAnimation4 9s linear infinite; /* Adjust the duration and easing as needed */
+  animation: bounceAnimation3 9s linear infinite; /* Adjust the duration and easing as needed */
   z-index: 1; /* Set a negative z-index to keep it behind other elements */
 }
 
@@ -202,23 +293,7 @@ nav li a:hover {
   border-radius: 40%;
 }
 
-@keyframes bounceAnimation4 {
-  0%{
-    transform: translate(0, 0) skew(30deg);
-  }
-  25% {
-    transform: translate(25vw, +1500%) skew(70deg);
-  }
-  50% {
-    transform: translate(50vw, +0) skew(15deg);
-  }
-  75% {
-    transform: translate(75vw, +1500%) skew(130deg);
-  }
-  100% {
-    transform: translate(100vw, +0) skew(55deg);
-  }
-}
+
 
 @keyframes bounceAnimation2 {
   0%{
@@ -370,14 +445,17 @@ nav li a:hover {
 }
 
 .social-icons{
-  height: 25px;
-  width: 25px;
+  height: 1.5em;
+  width: 1.5em;
   transition: scale ease-in-out 3s;
   
 }
 
+
 .social-icons:hover{
-  scale: 120%;
+  height: 2em;
+  width: 2em;
+  transition: height ease-in 0.1s, width ease-in 0.1s;
 }
 
 .end{
@@ -412,6 +490,64 @@ nav li a:hover {
   transform: translateX(0); 
   
 }
+
+/* neon bars */
+#neon-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.neon-bar {
+  position: absolute;
+  animation: hover 1s infinite alternate;
+  z-index: -1;
+  opacity: 0.3;
+  transform: opacity 0.3s ease-in-out;
+}
+
+@keyframes hover {
+  to {
+      transform: translateY(-5px);
+  }
+}
+
+/* Neon glow effect */
+.neon-bar::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px; /* Adjust the border-radius to control the bar's corners */
+  opacity: 0.3; /* Adjust the opacity for the glow effect */
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  to {
+      opacity: 1; /* Adjust the opacity for the glow effect */
+  }
+}
+
+/* Random rotation angles for bars */
+.neon-bar.rotate-45::before {
+  transform: rotate(45deg);
+}
+
+.neon-bar.rotate-90::before {
+  transform: rotate(90deg);
+}
+
+.neon-bar.rotate-135::before {
+  transform: rotate(135deg);
+}
+
+
+
+
+
 
 /* Hamburger menu styles for smaller screens */
 @media only screen and (max-width: 768px) {
@@ -456,10 +592,13 @@ nav li a:hover {
     display: none;
   }
 
+  .about-img{
+    text-align: center;
+    display: block;
+  }
+
   .about-img img {
-    margin: 0 auto;
-    width: 80%; 
-    max-width: none; 
+    width: 100%;
     border-radius: 10%; 
     
   }
@@ -525,6 +664,12 @@ nav li a:hover {
     display: block;
     height: fit-content;
   }
+
+  
+
+  .hover-image{
+  }
+
 }
 
 @media screen and (min-width: 720px) {
@@ -550,3 +695,5 @@ nav li a:hover {
    padding: 4% 0;
   }
 }
+
+
