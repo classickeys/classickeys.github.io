@@ -7,22 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let timeoutId;
 
-
-
     hoverImg.addEventListener('mouseenter', () => {
-        createNeonBars();
-        changeButtons(buttons, 'ghostwhite' , 'rgb(38, 38, 38)');
-        changeColor(colorChangeDiv, 'rgb(41, 41, 41)'); // Change color of a div
-        changeFontColor(textToChangeColor, 'ghostwhite'); // Change color of text
+        if (!container.classList.contains('neon-bars-created')) {
+            createNeonBars();
+            container.classList.add('neon-bars-created');
+            changeButtons(buttons, 'ghostwhite', 'rgb(38, 38, 38)');
+            changeColor(colorChangeDiv, 'rgb(41, 41, 41)'); // Change color of a div
+            changeFontColor(textToChangeColor, 'ghostwhite'); // Change color of text
+        }
     });
 
     hoverImg.addEventListener('mouseleave', () => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
             removeNeonBars();
-            changeButtons(buttons, 'rgb(38, 38, 38)', 'ghostwhite' );
-
-            changeColor(colorChangeDiv, 'linear-gradient(to bottom,  hsla(240, 100%, 99%, 0.826) , rgba(38, 38, 38, 0.17),rgba(250, 250, 255, 0.826)), linear-gradient(to bottom,  rgba(38, 38, 38, 0.17), rgba(250, 250, 255, 0.826))'); // Revert color of a div
+            container.classList.remove('neon-bars-created');
+            changeButtons(buttons, 'rgb(38, 38, 38)', 'ghostwhite');
+            changeColor(colorChangeDiv, 'linear-gradient(to bottom, hsla(240, 100%, 99%, 0.826), rgba(38, 38, 38, 0.17),rgba(250, 250, 255, 0.826)), linear-gradient(to bottom, rgba(38, 38, 38, 0.17), rgba(250, 250, 255, 0.826))'); // Revert color of a div
             changeFontColor(textToChangeColor, 'rgb(82, 82, 82)'); // Revert color of text
         }, 3000);
     });
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         element.style.color = color;
     }
 
-    function changeButtons(element, color, color2){
+    function changeButtons(element, color, color2) {
         element.style.background = color;
         element.style.color = color2;
     }
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function getRandomRotation() {
-        const rotations = ['45', '90', '135']; // Add more rotation angles as needed
+        const rotations = ['45deg', '90deg', '135deg']; // Add more rotation angles as needed
         return rotations[Math.floor(Math.random() * rotations.length)];
     }
 });

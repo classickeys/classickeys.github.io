@@ -56,10 +56,7 @@ body {
   transition: opacity 1s ease;
 }
 
-.hidden {
-  display: block;
-  transition: opacity 0.5s ease;
-}
+
 
 .exitLoad {
   display: block;
@@ -494,6 +491,18 @@ nav li a:hover {
   z-index: -1;
 }
 
+.rotate-45deg {
+  transform: rotate(45deg);
+}
+
+.rotate-90deg {
+  transform: rotate(90deg);
+}
+
+.rotate-135deg {
+  transform: rotate(135deg);
+}
+
 
 .neon-bar {
   position: absolute;
@@ -505,7 +514,7 @@ nav li a:hover {
 
 @keyframes hover {
   to {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
   }
 }
 
