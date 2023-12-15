@@ -4,8 +4,10 @@ body {
   background-color: rgb(38, 38, 38);
   color: rgb(82, 82, 82);
   font-family: "Oswald", sans-serif;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
+
+/* animation before screen loads */
 
 #loader-container {
   position: fixed;
@@ -13,7 +15,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgb(231, 231, 231);
+  background-color: ghostwhite;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +27,7 @@ body {
   width: 40%;
   border-radius: 2%;
   height: 15px;
-  background-color: #ddd;
+  background-color: ghostwhite;
   position: relative;
   overflow: hidden;
 }
@@ -33,7 +35,7 @@ body {
 #filler {
   width: 0;
   height: 100%;
-  background-color: rgb(38, 38, 38);;
+  background-color: rgb(38, 38, 38);
   animation: fillAnimation 3s forwards;
 }
 
@@ -51,25 +53,26 @@ body {
   font-size: 18px;
 }
 
+/* end of splash screen */
+
+
 #page-content {
   opacity: 0;
   transition: opacity 1s ease;
 }
 
-
-
 .exitLoad {
   display: block;
 }
 
-
-
-
-header{
+header {
   padding: 1%;
   white-space: nowrap;
   width: 100%;
 }
+
+
+/* Nav bar Styles */
 
 nav {
   font-family: "Kanit", sans-serif;
@@ -77,6 +80,9 @@ nav {
   color: ghostwhite;
   line-height: normal;
   vertical-align: middle;
+  top: 0;
+  width: 100%;
+  transition: opacity 0.5s ease;
 }
 
 nav li a:visited {
@@ -88,37 +94,28 @@ nav li a:link {
 }
 
 .nav-left {
-  display: inline-block;
-  width: 45vw;
+  width: 35%;
   margin-left: 2%;
+  margin-right: 5vw;
   font-size: 1em;
 }
 
-
-.nav-left li:hover{
-  
+.nav-left:hover {
   font-size: 1.2em;
   transition: font-size 0.1s ease;
 }
 
 .nav-right {
-  display: inline-block;
-  width: calc(55vw - 6%);
   font-weight: 200;
   text-align: right;
+  font-size: 1.2rem;
 }
 
-.nav-right li:hover{
-  
+.nav-right:hover {
   font-size: 1em;
   transition: font-size 0.1s ease;
 }
 
-.nav-right li {
-  margin-left: 4%;
-  font-size: 1.2rem;
-  width: auto;
-}
 
 nav ul {
   display: block;
@@ -144,6 +141,11 @@ nav li a:hover {
   transition: color 0.3s ease;
   cursor: pointer;
 }
+
+/* end of Nav styles */
+
+
+
 
 .about {
   background-color: rgb(231, 231, 231);
@@ -185,7 +187,7 @@ nav li a:hover {
   opacity: 1;
   pointer-events: none; /* Allows hovering over the text itself */
   z-index: 1; /* Ensures the text appears above the image */
-  
+
   width: 90%;
   font-size: 0.8em;
 }
@@ -219,7 +221,6 @@ nav li a:hover {
   transition: opacity 0.3s ease-in-out;
   margin: 0 auto;
 }
-
 
 @keyframes bounce {
   0%,
@@ -274,21 +275,18 @@ nav li a:hover {
   z-index: 1; /* Set a negative z-index to keep it behind other elements */
 }
 
-.bouncing-box-left-to-right:hover{
+.bouncing-box-left-to-right:hover {
   background-color: rgb(50, 49, 49);
   border-radius: 20%;
-
 }
 
-.bouncing-box:hover{
+.bouncing-box:hover {
   background-color: rgb(50, 49, 49);
   border-radius: 40%;
 }
 
-
-
 @keyframes bounceAnimation2 {
-  0%{
+  0% {
     transform: translate(0, +1500%);
   }
   25% {
@@ -306,7 +304,7 @@ nav li a:hover {
 }
 
 @keyframes bounceAnimation3 {
-  0%{
+  0% {
     transform: translate(0, 0%) scale(1);
   }
   25% {
@@ -321,12 +319,10 @@ nav li a:hover {
   100% {
     transform: translate(100vw, +0%) scale(1);
   }
-
-  
 }
 
 @keyframes bounceAnimation {
-  0%{
+  0% {
     transform: translate(0, 0%);
   }
   25% {
@@ -384,14 +380,21 @@ nav li a:hover {
   margin: 0;
   width: 100%;
   height: 100%;
-  background: 
-    linear-gradient(to bottom,  hsla(240, 100%, 99%, 0.826) , rgba(38, 38, 38, 0.17),rgba(250, 250, 255, 0.826)), 
-    linear-gradient(to bottom,  rgba(38, 38, 38, 0.17), rgba(250, 250, 255, 0.826)) ;
+  background: linear-gradient(
+      to bottom,
+      hsla(240, 100%, 99%, 0.826),
+      rgba(38, 38, 38, 0.17),
+      rgba(250, 250, 255, 0.826)
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(38, 38, 38, 0.17),
+      rgba(250, 250, 255, 0.826)
+    );
   background-size: 100% 200%; /* Double the size to accommodate two gradients */
   animation: colorLoop 10s linear infinite;
   z-index: -1;
 }
-
 
 .about-img img {
   width: 30vw;
@@ -432,25 +435,23 @@ nav li a:hover {
   margin-right: 5px;
 }
 
-.social{
+.social {
   padding: 2%;
 }
 
-.social-icons{
+.social-icons {
   height: 1.5em;
   width: 1.5em;
   transition: scale ease-in-out 3s;
-  
 }
 
-
-.social-icons:hover{
+.social-icons:hover {
   height: 2em;
   width: 2em;
   transition: height ease-in 0.1s, width ease-in 0.1s;
 }
 
-.end{
+.end {
   display: none;
   text-align: center;
 }
@@ -463,15 +464,13 @@ nav li a:hover {
   width: 250px;
   height: 100%;
   background-color: rgba(39, 39, 39, 0.902);
-  color:ghostwhite;
+  color: ghostwhite;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 999;
   transform: translateX(-250px); /* Initial position off-screen */
   transition: transform 0.3s ease; /* Slide-in transition effect */
-
 }
-
 
 .menu-button {
   display: none;
@@ -479,8 +478,7 @@ nav li a:hover {
 }
 
 .side-menu.menu-open {
-  transform: translateX(0); 
-  
+  transform: translateX(0);
 }
 
 /* neon bars */
@@ -503,7 +501,6 @@ nav li a:hover {
   transform: rotate(135deg);
 }
 
-
 .neon-bar {
   position: absolute;
   animation: hover 1s infinite alternate;
@@ -514,7 +511,7 @@ nav li a:hover {
 
 @keyframes hover {
   to {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
@@ -531,7 +528,7 @@ nav li a:hover {
 
 @keyframes neon-flicker {
   to {
-      opacity: 1; /* Adjust the opacity for the glow effect */
+    opacity: 1; /* Adjust the opacity for the glow effect */
   }
 }
 
@@ -548,33 +545,26 @@ nav li a:hover {
   transform: rotate(135deg);
 }
 
-
-
-
-
-
 /* Hamburger menu styles for smaller screens */
 @media only screen and (max-width: 768px) {
   nav li a {
     display: block;
     text-align: center;
-        text-wrap: nowrap;
-
+    text-wrap: nowrap;
   }
 
   .menu-button {
     display: block;
     text-align: center;
-}
-
+  }
 
   .nav-left,
   .nav-right {
     margin: 0;
     display: block;
-    
+
     box-sizing: border-box;
-    width:100%;
+    width: 100%;
   }
 
   .nav-left li,
@@ -586,47 +576,39 @@ nav li a:hover {
     text-align: center;
   }
 
-
-  ul{
+  ul {
     padding: 0;
   }
 
-  .nav-right ul{
-    
+  .nav-right ul {
     display: none;
   }
 
-  .about-img{
+  .about-img {
     text-align: center;
     display: block;
   }
 
   .about-img img {
     width: 100%;
-    border-radius: 10%; 
-    
+    border-radius: 10%;
   }
-  
+
   .close-button {
     cursor: pointer;
     position: absolute;
     top: 10px;
-            right: 10px;
-            font-size: 20px;
-            color:ghostwhite;
+    right: 10px;
+    font-size: 20px;
+    color: ghostwhite;
   }
 
   .close-button li a {
     margin: 0 auto;
-    
   }
 
-  
- 
-
-  .loading-text{
-    
-    text-wrap:wrap;
+  .loading-text {
+    text-wrap: wrap;
   }
 
   .about-text {
@@ -648,45 +630,41 @@ nav li a:hover {
     height: 1.5rem;
     width: 1.5rem;
     margin-right: 1%;
-    
   }
 
-  .social-icons:hover{
+  .social-icons:hover {
     height: 2rem;
     width: 2rem;
     transition: height ease-in 0.1s, width ease-in 0.1s;
   }
 
-
   .about-img:hover::after {
     width: 60%;
-    top:50%;
+    top: 50%;
     font-size: 0.6rem;
   }
 
-  .side-menu li{
+  .side-menu li {
     display: block;
     height: fit-content;
   }
 
-  
-
-  .hover-image{
+  .hover-image {
   }
-
 }
 
 @media screen and (min-width: 720px) {
-  ul{
+  ul {
     padding: 0;
     margin: 0;
     display: inline-block;
   }
 
-  nav li { /* Restore right margin if needed */
+  nav li {
+    /* Restore right margin if needed */
     white-space: nowrap;
-    
-    display: inline-block;  
+
+    display: inline-block;
     margin-bottom: 0; /* Remove bottom margin */
   }
 
@@ -694,10 +672,8 @@ nav li a:hover {
     font-size: 0.8em;
   }
 
-  .nav-right li{
-   margin-left: 0;
-   padding: 4% 0;
+  .nav-right li {
+    margin-left: 0;
+    padding: 4% 0;
   }
 }
-
-

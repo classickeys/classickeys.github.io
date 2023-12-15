@@ -11,3 +11,26 @@
   display: block;
   transition: opacity 0.5s ease;
 }
+
+/* SVG Animation
+ */
+
+ @keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.gear {
+  fill: rgb(41, 41, 41); /* Dark theme color */
+  animation: spin 3s linear infinite; /* 3s duration, linear timing function, infinite loop */
+  transform-origin: center; /* Set rotation point to the center of the gear */
+}
+
+.gear:nth-child(2) {
+  fill:rgb(41, 41, 41); /* Dark theme color */
+  animation: spin 4s linear infinite; /* 4s duration, linear timing function, infinite loop */
+}
