@@ -18,7 +18,7 @@ filterImage2.addEventListener('mouseenter', () => {
 filterImage2.addEventListener('mouseleave', () => {
     filterImage.classList.add('bounce');
     filterImage2.classList.add('bounce');
-    // Set a timeout to fade out after 15 seconds
+    // Set a timeout to fade out after 5 seconds
     timeoutId = setTimeout(() => {
         endElements.forEach(endElement => {
             endElement.style.display = 'none';
@@ -32,7 +32,7 @@ socialIcons[0].addEventListener('mouseenter', () => {
 });
 
 socialIcons[0].addEventListener('mouseleave', () => {
-    // Set a timeout to fade out after 15 seconds when mouse leaves socialIcons
+    // Set a timeout to fade out after 3 seconds when mouse leaves socialIcons
     timeoutId = setTimeout(() => {
         endElements.forEach(endElement => {
             endElement.style.display = 'none';

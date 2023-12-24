@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap");
 
 body {
-  background-color: rgb(38, 38, 38);
+  background-color: #262626;
   color: rgb(82, 82, 82);
   font-family: "Oswald", sans-serif;
   overflow-x: hidden;
+  margin: 0;
 }
 
 /* animation before screen loads */
@@ -21,6 +22,12 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  transform: translateX(0); /* Initial position on-screen */
+  transition: transform 1.6s ease; /* Transition for the 'transform' property */
+}
+
+#loader-container.loader-close {
+  transform: translateX(-100%); /* Move off-screen when the 'loader-close' class is applied */
 }
 
 #loader-bar {
@@ -58,7 +65,7 @@ body {
 
 #page-content {
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.3s ease;
 }
 
 .exitLoad {
@@ -67,12 +74,19 @@ body {
 
 /* Header Styles */
 header {
-  padding: 1%;
+  padding: 2%;
+  position: fixed;
   background-color: rgb(28, 27, 27);
   white-space: nowrap;
   width: 100%;
   height: 30px; /* Adjust this value based on your header height */
   line-height: 30px; /* Should match the height of the header */
+  z-index: 10;
+}
+
+.header-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Nav bar Styles */
@@ -81,9 +95,10 @@ nav {
   color: ghostwhite;
   line-height: normal;
   display: inline-block;
-  position: fixed;
+  height: 100%;
   width: 100%;
   transition: opacity 0.5s ease;
+  
   
 }
 
@@ -97,11 +112,12 @@ nav li a:link {
 
 .nav-left {
   margin-left: 2%;
-  font-size: 1em;
+  font-weight: 200;
+  font-size: 1.2em;
 }
 
 .nav-left:hover {
-  font-size: 1.2em;
+  font-size: 1.3em;
   transition: font-size 0.1s ease;
 }
 
@@ -109,26 +125,24 @@ nav li a:link {
   float: right;
   font-weight: 200;
   text-align: right;
-  font-size: 1.2rem;
+  font-size: 1.2em;
+  margin-right: 2%;
 }
 
 .nav-right:hover {
-  font-size: 1em;
+  font-size: 1.3em;
   transition: font-size 0.1s ease;
 }
-
 
 nav ul {
   display: block;
   list-style: none;
-  height: 100%;
   text-align: left;
 }
 
 nav li {
   white-space: nowrap;
   display: inline-block;
-  height: 100%;
 }
 nav li a {
   text-decoration: none;
@@ -136,7 +150,7 @@ nav li a {
 }
 
 nav li a:hover {
-  background-color: hsla(240, 100%, 99%, 0.7);
+  background-color: ghostwhite;
   color: rgb(28, 28, 28);
   border-radius: 8px;
   transition: background-color 0.3s ease;
@@ -147,10 +161,15 @@ nav li a:hover {
 /* end of Nav styles */
 
 
+/* About Section */
 
+#about{
+  
+  height: 100vh;
+}
 
 .about {
-  background-color: rgb(231, 231, 231);
+  background-color: ghostwhite;
   position: relative;
   width: 100%;
   height: max-content;
@@ -160,7 +179,7 @@ nav li a:hover {
 }
 
 .section {
-  height: 100vh;
+  min-height: fit-content;
   box-sizing: border-box;
 }
 
@@ -181,7 +200,7 @@ nav li a:hover {
   top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgb(197, 141, 0, 0.531);
+  background: rgba(77, 55, 0, 0.798);
   color: rgb(231, 231, 231);
   padding: 5%;
   text-align: center;
@@ -224,6 +243,24 @@ nav li a:hover {
   margin: 0 auto;
 }
 
+.about-text {
+  width: 35%;
+  height: auto;
+  display: inline-block;
+  padding: 7% 5%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: normal;
+  vertical-align: middle;
+}
+.loading-text {
+  overflow: hidden; /* Hide overflowing content */
+  white-space: nowrap;
+}
+
+
+/* bounce animation for the image */
+
 @keyframes bounce {
   0%,
   20%,
@@ -263,28 +300,6 @@ nav li a:hover {
   100% {
     transform: translate(0, +0%);
   }
-}
-
-.bouncing-box-left-to-right {
-  transition: background-color 0.3s ease;
-  overflow: hidden;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  background-color: #74747448;
-  animation: bounceAnimation3 9s linear infinite; /* Adjust the duration and easing as needed */
-  z-index: 1; /* Set a negative z-index to keep it behind other elements */
-}
-
-.bouncing-box-left-to-right:hover {
-  background-color: rgb(50, 49, 49);
-  border-radius: 20%;
-}
-
-.bouncing-box:hover {
-  background-color: rgb(50, 49, 49);
-  border-radius: 40%;
 }
 
 @keyframes bounceAnimation2 {
@@ -353,48 +368,17 @@ nav li a:hover {
   z-index: 1; /* Set a negative z-index to keep it behind other elements */
 }
 
-.about-text {
-  width: 35%;
-  height: auto;
-  display: inline-block;
-  padding: 7% 5%;
-  margin: 0 auto;
-  text-align: center;
-  line-height: normal;
-  vertical-align: middle;
-}
-.loading-text {
-  overflow: hidden; /* Hide overflowing content */
-  white-space: nowrap;
+.bouncing-box:hover {
+  background-color: rgb(50, 49, 49);
+  border-radius: 40%;
 }
 
-@keyframes colorLoop {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
-}
 
 .background {
   position: absolute;
   margin: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-      to bottom,
-      hsla(240, 100%, 99%, 0.826),
-      rgba(38, 38, 38, 0.17),
-      rgba(250, 250, 255, 0.826)
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(38, 38, 38, 0.17),
-      rgba(250, 250, 255, 0.826)
-    );
-  background-size: 100% 200%; /* Double the size to accommodate two gradients */
-  animation: colorLoop 10s linear infinite;
   z-index: -1;
 }
 
@@ -420,11 +404,12 @@ nav li a:hover {
 }
 
 .buttons:hover {
-  background-color: ghostwhite;
-  color: rgb(38, 38, 38);
+  background-color: rgb(38, 38, 38); 
+  color: ghostwhite;
   transition: background-color 0.3s ease;
   transition: color 0.3s ease;
   cursor: pointer;
+  padding: 14px 22px;
 }
 
 .buttons:focus {
@@ -549,6 +534,20 @@ nav li a:hover {
 
 /* Hamburger menu styles for smaller screens */
 @media only screen and (max-width: 768px) {
+
+
+  header{
+    position: static;
+    height: fit-content;
+  }
+
+  nav{
+    position: static;
+  } 
+
+  nav ul {
+    text-align: center;
+  }
   nav li a {
     display: block;
     text-align: center;
@@ -564,17 +563,23 @@ nav li a:hover {
   .nav-right {
     margin: 0;
     display: block;
-
+    text-align: center;
     box-sizing: border-box;
     width: 100%;
   }
 
-  .nav-left li,
-  .nav-right li {
+
+  .nav-left {
     margin: 0;
     width: 100%;
     display: block;
     margin-bottom: 2%;
+    text-align: center;
+  }
+  
+  .nav-right {
+    
+    display: none;
     text-align: center;
   }
 

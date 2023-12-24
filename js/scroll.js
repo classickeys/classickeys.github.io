@@ -1,30 +1,3 @@
-let prevScrollPos = window.scrollY;
-        const navbar = document.getElementById("navbar");
-
-        window.onscroll = function () {
-            const currentScrollPos = window.scrollY;
-
-            if (prevScrollPos > currentScrollPos) {
-                // Scroll up
-                navbar.classList.remove("hidden");
-            } else {
-                // Scroll down
-                navbar.classList.add("hidden");
-            }
-
-            prevScrollPos = currentScrollPos;
-        };
-
-        // Detect when scrolling stops
-        let scrollTimeout;
-        window.addEventListener("scroll", function () {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                navbar.classList.remove("hidden");
-            }, 200); // Adjust the delay as needed
-        });
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section");
   let index = 0;
@@ -32,64 +5,84 @@ document.addEventListener("DOMContentLoaded", function () {
   let lastScrollPos = 0;
 
   window.addEventListener("scroll", function () {
-      const scrollPos = window.scrollY;
-      const windowHeight = window.innerHeight;
+    const scrollPos = window.scrollY;
 
-      // Determine scrolling direction
-      const scrollingDown = scrollPos > lastScrollPos;
-      lastScrollPos = scrollPos;
+    // Determine scrolling direction
+    const scrollingDown = scrollPos > lastScrollPos;
+    lastScrollPos = scrollPos;
 
-      // Calculate the bottom of the current section
-      const sectionBottom = sections[index].offsetTop + sections[index].offsetHeight;
+    // Calculate the bottom of the current section
+    const sectionBottom = sections[index].offsetTop + sections[index].offsetHeight;
 
-      // Buffer zone to stop scrolling before the effect
-      const bufferZone = 1; // Adjust this value as needed
+    // Buffer zone to stop scrolling before the effect
+    const bufferZone = 200; // Adjust this value as needed
 
-      // Handle scrolling down
-      if (scrollingDown) {
-          if (!isScrolling && scrollPos >= sectionBottom - windowHeight - bufferZone) {
-              if (index < sections.length - 1) {
-                  isScrolling = true;
-                  index++;
-                  scrollToSection(index);
-              }
-          }
-      } else { // Handle scrolling up
-          if (!isScrolling && scrollPos < sections[index].offsetTop + bufferZone) {
-              if (index > 0) {
-                  isScrolling = true;
-                  index--;
-                  scrollToSection(index);
-              }
-          }
+    // Handle scrolling down
+    if (scrollingDown) {
+      if (!isScrolling && scrollPos >= sectionBottom - window.innerHeight + bufferZone) {
+        if (index < sections.length - 1) {
+          isScrolling = true;
+          index++;
+          scrollToSection(index);
+        }
       }
+    } else {
+      // Handle scrolling up
+      if (!isScrolling && scrollPos < sections[index].offsetTop - bufferZone) {
+        if (index > 0) {
+          isScrolling = true;
+          index--;
+          scrollToSection(index);
+        }
+      }
+    }
   });
 
   function scrollToSection(index) {
-      const section = sections[index];
-      const sectionHeight = section.offsetHeight;
-      const offsetTop = section.offsetTop;
+    const section = sections[index];
 
-      // Calculate the scrolling distance
-      const scrollTop = index === 0 ? 0 : offsetTop - (window.innerHeight - sectionHeight) / 2;
+    // Scroll to the top of the selected section
+    section.scrollIntoView({
+      behavior: "smooth"
+    });
 
-      // Scroll to the top of the selected section
-      window.scrollTo({
-          top: scrollTop,
-          behavior: "smooth"
+    // Toggle visibility classes after a delay
+    setTimeout(() => {
+      sections.forEach((s, i) => {
+        if (i === index) {
+          s.classList.remove("off");
+        } else {
+          s.classList.add("off");
+        }
       });
 
-      // Toggle visibility classes after a delay
-      setTimeout(() => {
-          sections.forEach((s, i) => {
-              if (i === index) {
-                  s.classList.remove("off");
-              } else {
-                  s.classList.add("off");
-              }
-          });
-
-          isScrolling = false;
-      }, 1600); // Adjust the delay as needed for the smooth transition
+      isScrolling = false;
+    }, 400); // Adjust the delay as needed for the smooth transition
   }
 });
+
+
+let scrollTimeout;
+
+function shouldApplyScrollEffect() {
+  return window.innerWidth > 768; // Adjust the width threshold as needed
+}
+
+function handleScroll() {
+  clearTimeout(scrollTimeout);
+
+  const header = document.getElementById("headerbar");
+
+  if (shouldApplyScrollEffect()) {
+    // Add a class to make the header disappear immediately
+    header.classList.add("header-hidden");
+
+    // Set a timeout to make the header reappear after 3 seconds of no scrolling
+    scrollTimeout = setTimeout(function () {
+      header.classList.remove("header-hidden");
+    }, 3000);
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("resize", handleScroll);

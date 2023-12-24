@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             removeNeonBars();
             container.classList.remove('neon-bars-created');
             changeButtons(buttons, 'rgb(38, 38, 38)', 'ghostwhite');
-            changeColor(colorChangeDiv, 'linear-gradient(to bottom, hsla(240, 100%, 99%, 0.826), rgba(38, 38, 38, 0.17),rgba(250, 250, 255, 0.826)), linear-gradient(to bottom, rgba(38, 38, 38, 0.17), rgba(250, 250, 255, 0.826))'); // Revert color of a div
+            changeColor(colorChangeDiv, 'ghostwhite'); // Revert color of a div
             changeFontColor(textToChangeColor, 'rgb(82, 82, 82)'); // Revert color of text
         }, 3000);
     });

@@ -1,0 +1,114 @@
+#info{
+    width: 100%;
+}
+
+#git-info{
+    padding: 5%;
+    width: 47%;
+    border-radius: 10%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    color: ghostwhite;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+#git-info #info-img{
+    text-align: center;
+    
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 10%;
+    height: auto;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+#git-info li{
+    list-style: none;
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+#git-info a{
+    text-decoration: none;
+    color: #f97316;
+    
+}
+
+#git-info p{
+    width: 70%;
+    
+    margin: 0 auto;
+
+}
+
+#skills p{
+    width: 70%;
+    margin: 0 auto;
+}
+
+#git-container{
+    vertical-align: top;
+    padding: 3%;
+    width: 45%;
+    border-radius: 10%;
+    display: inline-block;
+    box-sizing: border-box; 
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+#git-container h1{
+    color: ghostwhite;
+    margin-left: 2%;
+    
+}
+
+.git-stats{
+    height: auto;
+    line-height: normal;
+    vertical-align: auto;
+}
+
+
+.git-stats-img{
+    width: 100%;
+}
+
+.git-graph-commits{
+    width: 100%;
+}
+
+.git-inline{
+    display: inline-block;
+    
+}
+
+#git-right{
+    overflow: hidden;
+    width: 45%;
+    vertical-align: top;
+}
+
+.git-inline-img{
+    display: block;
+}
+
+
+
+@media screen and (max-width: 720px) {
+    #git-info{
+        padding: 5%;
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+    
+    }
+
+    #git-container{
+        width: 80%;
+        border-radius: 10%;
+        display: block;
+    
+    }
+}
