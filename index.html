@@ -7,7 +7,9 @@
   <title>Kelechi's Portfolio</title>
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/curiculum.css" />
   <link rel="stylesheet" href="css/scrolling.css" />
+  <link rel="stylesheet" href="css/projects.css" />
   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
 </head>
 
@@ -31,16 +33,16 @@
           </li>
 
           <li class="nav-right">
-            <a href="" target="_blank" rel="noopener noreferrer">Contact</a>
+            <a href="#contact" target="" rel="noopener noreferrer">Contact</a>
           </li>
 
-          
+
           <li class="nav-right">
-            <a href="" target="_blank" rel="noopener noreferrer">Projects</a>
+            <a href="#projects" target="" rel="noopener noreferrer">Projects</a>
           </li>
 
           <li class="nav-right">
-            <a href="" target="_blank" rel="noopener noreferrer">Curiculum Vitae</a>
+            <a href="#curiculum" target="" rel="noopener noreferrer">Curiculum Vitae</a>
           </li>
 
           <li class="nav-right">
@@ -66,10 +68,12 @@
     <nav class="side-menu">
       <span class="close-button" onclick="closeMenu()">&times;</span>
       <ul>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Curiculum Vitae</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#git-info">Github Stats</a></li>
+        <li><a href="#curiculum">Curiculum Vitae</a></li>
+        
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -112,7 +116,7 @@
       <img src="assets/Info.jpg" id="info-img" alt="Profile Image">
       <br><br><br>
 
-      
+
       <h1>BSc Honors Student at Rhodes University</h1>
 
       <p>
@@ -124,29 +128,42 @@
       <br>
       <br>
       <ul>
-        <li>🌍 I'm based in Grahamstown, South Africa</li>
+        <li>🌍</li>
+        <li>I'm based in Grahamstown, South Africa</li>
+        <br>
+        <li>🖥️</li>
         <li>
-          🖥️ See my portfolio at
+          See my portfolio at
           <a href="http://classickeys.github.io"> MyPortfolio </a>
         </li>
+        <br>
+        <li>✉️</li>
         <li>
-          ✉️ You can contact me at
+          You can contact me at
           <a href="mailto:kidkmen@gmail.com"> Here </a>
         </li>
+        <br>
+        <li>🚀</li>
         <li>
-          🚀 I'm currently working on my
+          I'm currently working on my
           <a href="http://classickeys.github.io"> WebPortfolio </a>
         </li>
+        <br>
+        <li>🧠</li>
         <li>
-          🧠 I'm learning towards an AWS Cloud Architect Associate Certification, I am also currently busy with a Web
+          I'm learning towards an AWS Cloud Architect Associate Certification, I am also currently busy with a Web
           Development and Python mini projects
         </li>
+        <br>
+        <li>🤝</li>
         <li>
-          🤝 I'm open to collaborating on Interesting proejcts that use
+          I'm open to collaborating on Interesting proejcts that use
           different algorithms
         </li>
+        <br>
+        <li>⚡</li>
         <li>
-          ⚡ I enjoy listening to new music, editing videos and creating
+          I enjoy listening to new music, editing videos and creating
           graphics
         </li>
       </ul>
@@ -224,7 +241,7 @@
         <h1>Socials</h1>
 
 
-        <p > <a href="https://www.github.com/classickeys" target="_blank" rel="noreferrer">
+        <p> <a href="https://www.github.com/classickeys" target="_blank" rel="noreferrer">
             <picture>
               <source media="(prefers-color-scheme: dark)"
                 srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg" />
@@ -299,11 +316,10 @@
               alt="Top Languages" /></a>
         </div>
 
-        <div class="git-inline" id="git-right"><a href="https://github.com/classickeys/IS3SysDev"
-            ><img class="git-inline-img"  
+        <div class="git-inline" id="git-right"><a href="https://github.com/classickeys/IS3SysDev"><img
+              class="git-inline-img"
               src="https://github-readme-stats.vercel.app/api/pin/?username=classickeys&repo=IS3SysDev&title_color=f97316&text_color=ffffff&icon_color=0891b2&bg_color=262626&hide_border=true&locale=en" /></a><a
-            href="https://github.com/classickeys/classickeys.github.io" ><img 
-            class="git-inline-img" 
+            href="https://github.com/classickeys/classickeys.github.io"><img class="git-inline-img"
               src="https://github-readme-stats.vercel.app/api/pin/?username=classickeys&repo=classickeys.github.io&title_color=f97316&text_color=ffffff&icon_color=0891b2&bg_color=262626&hide_border=true&locale=en" /></a>
         </div>
 
@@ -317,9 +333,125 @@
     </div>
   </div>
 
-  <div class="projects section off scrolling" id="projects"></div>
+  <div class="curiculum section off scrolling" id="curiculum">
+    <div class="curiculum-education">
 
-  <div class="curiculum section off scrolling" id="curiculum"></div>
+      <h1>Education</h1>
+
+      <h4>Rhodes University</h4>
+      <p>BSc Information Systems Honours 2024- </p>
+
+
+
+      <h4>Rhodes University</h4>
+      <p>BSc Computer Science & Information Systems 2021-2023</p>
+
+      <h4>Amazon Web Services</h4>
+      <p>
+        Cloud Associate Solutions Summer & Winter School Internship 2023
+      </p>
+
+      <h4>Wits University</h4>
+      <p>
+        MBBCh Medicine & Surgery 2016-2020
+      </p>
+    </div>
+    <div class="curiculum-experience">
+
+      <h1>Experience</h1>
+
+      <h4>IT Helpdesk Student Technician <br>
+        Rhodes University | Grahamstown | 2022- </h4>
+      <p>Student technician assisting students with computing issues and software queries.</p>
+
+      <h4>Computer Science Tutor CS1L | Information Systems Tutor IS202 <br>
+        Rhodes University | Grahamstown | 2023 </h4>
+      <p>
+        Assist during practical sessions with students in providing support in understanding the content of the useful
+        and marking the students&#8217 submissions.
+      </p>
+
+
+
+    </div>
+
+    <div class="curiculum-certifications">
+      <h1>Certifications</h1>
+
+      <h4>JavaScript Algorithms and Data Structures | 2023</h4>
+      <p>freeCodeCamp - Skills: JavaScript · Algorithms </p> <button class="buttons"
+        onclick="location.href='https://freecodecamp.org/certification/classickeys/javascript-algorithms-and-data-structures'"
+        type="button">Show Credential</button>
+
+      <h4>Management and Leadership Short Course Package | 2022</h4>
+      <p>FPD - Skills: Management </p> <button class="buttons"
+        onclick="location.href='https://learndigital.withgoogle.com/link/1ar27gu2qdc'" type="button">Show
+        Credential</button>
+
+      <h4>Responsive Web Design | 2022</h4>
+      <p>freeCodeCamp - Skills: HTML · Cascading Style Sheets (CSS) </p> <button class="buttons"
+        onclick="location.href='https://freecodecamp.org/certification/classickeys/responsive-web-design'"
+        type="button">Show Credential</button>
+
+      <h4>The Foundamentals of Digital Marketing | 2021</h4>
+      <p>Google Digital Garage - Skills: Digital Marketing </p> <button class="buttons"
+        onclick="location.href='https://learndigital.withgoogle.com/link/1ar27gu2qdc'" type="button">Show
+        Credential</button>
+
+
+
+    </div>
+
+
+
+    <div class="curiculum-leadership">
+      <h1>Leadership</h1>
+
+      <h4>CS302 Class Rep
+        Rhodes University | Grahamstown | 2023 </h4>
+      <p>
+        Duties included facilitating communication between students and the science faculty.
+        Advocating for student needs, addressing concerns, and collaborating with lecturers to enhance the overall
+        learning experience.
+      </p>
+
+
+      <h4>House Committee Member
+        Wits University | Johannesburg | 2019-2021 </h4>
+      <p>
+        Student Leader assisting hall wardens with duties related to students&#8217 well-being and creating a safe and
+        inclusive living environment for residents.
+        Mediated conflicts and resolved issues between residents. Organized and facilitated community-building
+        activities and events.
+      </p>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="projects section off scrolling" id="projects">
+    <h2>Projects </h2>
+    <br><br>
+    <div id="projects-container">
+      <div id="projects-content">
+        <div  class="projects-item">
+          <a href="http://classickeys.github.io">
+          <img src="assets/project.png" alt="Picture of Project" ></a>
+        </div>
+        <div class="projects-item">
+          <a href="http://classickeys.github.io">
+          <img src="assets/project-1.png" alt="Picture of Project" ></a>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
 
   <div class="contact section off scrolling" id="contact"></div>
 
@@ -329,6 +461,7 @@
   <script src="js/side.js"></script>
   <script src="js/bounce.js"></script>
   <script src="js/scroll.js"></script>
+  <script src="js/carousel.js"></script>
 </body>
 
 </html>

@@ -28,12 +28,18 @@
     list-style: none;
     width: 70%;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
+
+
 }
 #git-info a{
     text-decoration: none;
     color: #f97316;
     
+}
+
+#git-info ul{
+    padding: 0;
 }
 
 #git-info p{

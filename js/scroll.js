@@ -86,3 +86,23 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("resize", handleScroll);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('nav-right a');
+
+  links.forEach(link => {
+      link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          window.scrollTo({
+              top: targetElement.offsetTop - document.querySelector('nav').offsetHeight,
+              behavior: 'smooth'
+          });
+      });
+  });
+});
+
