@@ -68,12 +68,12 @@
     <nav class="side-menu">
       <span class="close-button" onclick="closeMenu()">&times;</span>
       <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#git-info">Github Stats</a></li>
-        <li><a href="#curiculum">Curiculum Vitae</a></li>
+        <li><a href="#about" onclick="closeMenu()">About Me</a></li>
+        <li><a href="#git-info" onclick="closeMenu()">Github Stats</a></li>
+        <li><a href="#curiculum" onclick="closeMenu()">Curiculum Vitae</a></li>
         
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -94,11 +94,12 @@
 
       <div class="end">
         <div class="icon"></div>
-        <button type="button" class="buttons" id="buttonsC">
+        <button type="button" class="buttons btnCon" id="buttonsC">
           Contact Info
         </button>
+        <br><br>
 
-        <div class="social showSection">
+        <div class="social showSection" id="social-section">
           <a href="http://instagram.com/itsclassickeys"><img class="social-icons" src="assets/camera.png"
               alt="instagram icon" /></a>
           <a href="http://x.com/itsclassickeys"><img class="social-icons" src="assets/twitter.png" alt="x icon" /></a>
@@ -113,20 +114,14 @@
 
   <div class="info section off scrolling" id="info">
     <div id="git-info">
-      <img src="assets/Info.jpg" id="info-img" alt="Profile Image">
-      <br><br><br>
-
-
-      <h1>BSc Honors Student at Rhodes University</h1>
+           <h1>BSc Honors Student at Rhodes University</h1>
 
       <p>
         I have had a keen interest and a natural curiosity for technology and
         as such I aspire to become a full stack developer. Having built a few
         dynamic web apps with HTML, CSS, and JavaScript. I believe I can
-        utilise my skills to ensure that my vision comes true.
+        utilise my skills to achieve my aspirations.
       </p>
-      <br>
-      <br>
       <ul>
         <li>🌍</li>
         <li>I'm based in Grahamstown, South Africa</li>
@@ -139,26 +134,20 @@
         <br>
         <li>✉️</li>
         <li>
-          You can contact me at
-          <a href="mailto:kidkmen@gmail.com"> Here </a>
-        </li>
-        <br>
-        <li>🚀</li>
-        <li>
-          I'm currently working on my
-          <a href="http://classickeys.github.io"> WebPortfolio </a>
+          You can contact me 
+          <a href="mailto:kidkmen@gmail.com"> here </a>
         </li>
         <br>
         <li>🧠</li>
         <li>
-          I'm learning towards an AWS Cloud Architect Associate Certification, I am also currently busy with a Web
-          Development and Python mini projects
+          I'm learning towards an AWS Cloud Architect Associate Certification, I am also currently busy with web
+          development and Python mini projects
         </li>
         <br>
         <li>🤝</li>
         <li>
-          I'm open to collaborating on Interesting proejcts that use
-          different algorithms
+          I'm open to collaborating on any interesting projects that use
+          functional programming methodologies.
         </li>
         <br>
         <li>⚡</li>
@@ -237,53 +226,7 @@
         </p>
       </div>
 
-      <div id="socials">
-        <h1>Socials</h1>
-
-
-        <p> <a href="https://www.github.com/classickeys" target="_blank" rel="noreferrer">
-            <picture>
-              <source media="(prefers-color-scheme: dark)"
-                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg" />
-              <source media="(prefers-color-scheme: light)"
-                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" />
-              <img
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg"
-                width="32" height="32" />
-            </picture>
-          </a> <a href="http://www.instagram.com/itsclassickeys" target="_blank" rel="noreferrer">
-            <picture>
-              <source media="(prefers-color-scheme: dark)"
-                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg" />
-              <source media="(prefers-color-scheme: light)"
-                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg" />
-              <img
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg"
-                width="32" height="32" />
-            </picture>
-          </a> <a href="https://www.linkedin.com/in/classickeys" target="_blank" rel="noreferrer">
-            <picture>
-              <source media="(prefers-color-scheme: dark)"
-                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin-dark.svg" />
-              <source media="(prefers-color-scheme: light)"
-                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" />
-              <img
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg"
-                width="32" height="32" />
-            </picture>
-          </a> <a href="https://www.x.com/itsclassickeys" target="_blank" rel="noreferrer">
-            <picture>
-              <source media="(prefers-color-scheme: dark)"
-                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter-dark.svg" />
-              <source media="(prefers-color-scheme: light)"
-                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter.svg" />
-              <img
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter.svg"
-                width="32" height="32" />
-            </picture>
-          </a></p>
-
-      </div>
+     
     </div>
 
 
@@ -379,22 +322,22 @@
       <h1>Certifications</h1>
 
       <h4>JavaScript Algorithms and Data Structures | 2023</h4>
-      <p>freeCodeCamp - Skills: JavaScript · Algorithms </p> <button class="buttons"
+      <p>freeCodeCamp - Skills: JavaScript · Algorithms </p> <button class="buttons credential btnCon"
         onclick="location.href='https://freecodecamp.org/certification/classickeys/javascript-algorithms-and-data-structures'"
         type="button">Show Credential</button>
 
       <h4>Management and Leadership Short Course Package | 2022</h4>
-      <p>FPD - Skills: Management </p> <button class="buttons"
+      <p>FPD - Skills: Management </p> <button class="buttons credential btnCon"
         onclick="location.href='https://learndigital.withgoogle.com/link/1ar27gu2qdc'" type="button">Show
         Credential</button>
 
       <h4>Responsive Web Design | 2022</h4>
-      <p>freeCodeCamp - Skills: HTML · Cascading Style Sheets (CSS) </p> <button class="buttons"
+      <p>freeCodeCamp - Skills: HTML · Cascading Style Sheets (CSS) </p> <button class="buttons credential btnCon"
         onclick="location.href='https://freecodecamp.org/certification/classickeys/responsive-web-design'"
         type="button">Show Credential</button>
 
       <h4>The Foundamentals of Digital Marketing | 2021</h4>
-      <p>Google Digital Garage - Skills: Digital Marketing </p> <button class="buttons"
+      <p>Google Digital Garage - Skills: Digital Marketing </p> <button class="buttons credential btnCon"
         onclick="location.href='https://learndigital.withgoogle.com/link/1ar27gu2qdc'" type="button">Show
         Credential</button>
 
@@ -432,17 +375,17 @@
 
 
   <div class="projects section off scrolling" id="projects">
-    <h2>Projects </h2>
-    <br><br>
-    <div id="projects-container">
+    <h1>Recent Projects</h1>
+    <p>A slideshow of some of my more recent projects</p>
+    <br>
       <div id="projects-content">
         <div  class="projects-item">
           <a href="http://classickeys.github.io">
-          <img src="assets/project.png" alt="Picture of Project" ></a>
+          <img class="project-images" src="assets/project.png" alt="Picture of Project" ></a>
         </div>
         <div class="projects-item">
           <a href="http://classickeys.github.io">
-          <img src="assets/project-1.png" alt="Picture of Project" ></a>
+          <img class="project-images" src="assets/project-1.png" alt="Picture of Project" ></a>
         </div>
       </div>
 
@@ -453,7 +396,48 @@
 
 
 
-  <div class="contact section off scrolling" id="contact"></div>
+  <div class="contact section off scrolling" id="contact">
+    <div class="contact-img">
+    <img src="assets/Info.jpg" id="info-img" alt="Profile Image">
+  </div>
+    <div id="socials">
+      <h1>Contact Me</h1>
+
+
+      <p> <a href="https://www.github.com/classickeys" target="_blank" rel="noreferrer">
+          <picture>
+            
+            <img
+            src="assets/github-1.png"
+              alt="github icon"
+              width="32" height="32" />
+          </picture>
+        </a> <a href="http://www.instagram.com/itsclassickeys" target="_blank" rel="noreferrer">
+          <picture>
+            <img
+            src="assets/camera-1.png"
+            alt="instagram icon"
+              width="32" height="32" />
+          </picture>
+        </a> <a href="https://www.linkedin.com/in/classickeys" target="_blank" rel="noreferrer">
+          <picture>
+            
+            <img
+            src="assets/linkedin-1.png"
+            alt="linkedin icon"
+              width="32" height="32" />
+          </picture>
+        </a> <a href="https://www.x.com/itsclassickeys" target="_blank" rel="noreferrer">
+          <picture>
+            
+            <img
+            src="assets/twitter-1.png" alt="x icon"
+              width="32" height="32" />
+          </picture>
+        </a></p>
+
+    </div>
+  </div>
 
   <script src="js/loading.js"></script>
   <script src="js/neon.js"></script>

@@ -3,9 +3,10 @@
 }
 
 #git-info{
-    padding: 5%;
+    padding: 3%;
     width: 47%;
     border-radius: 10%;
+    
     display: inline-block;
     box-sizing: border-box;
     text-align: center;
@@ -13,16 +14,11 @@
     font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
-#git-info #info-img{
-    text-align: center;
-    
-    width: 60%;
-    margin: 0 auto;
-    border-radius: 10%;
-    height: auto;
-    line-height: normal;
-    vertical-align: middle;
+#git-info, #skills, .badges{
+    vertical-align: top;
 }
+
+
 
 #git-info li{
     list-style: none;

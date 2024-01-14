@@ -1,48 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section");
   let index = 0;
-  let isScrolling = false; // Variable to track if scrolling is in progress
-  let lastScrollPos = 0;
 
-  window.addEventListener("scroll", function () {
-    const scrollPos = window.scrollY;
-
-    // Determine scrolling direction
-    const scrollingDown = scrollPos > lastScrollPos;
-    lastScrollPos = scrollPos;
-
-    // Calculate the bottom of the current section
-    const sectionBottom = sections[index].offsetTop + sections[index].offsetHeight;
-
-    // Buffer zone to stop scrolling before the effect
-    const bufferZone = 200; // Adjust this value as needed
-
-    // Handle scrolling down
-    if (scrollingDown) {
-      if (!isScrolling && scrollPos >= sectionBottom - window.innerHeight + bufferZone) {
-        if (index < sections.length - 1) {
-          isScrolling = true;
-          index++;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const targetIndex = Array.from(sections).findIndex(section => section.id === entry.target.id);
+        if (targetIndex !== -1 && targetIndex !== index) {
+          index = targetIndex;
           scrollToSection(index);
         }
       }
-    } else {
-      // Handle scrolling up
-      if (!isScrolling && scrollPos < sections[index].offsetTop - bufferZone) {
-        if (index > 0) {
-          isScrolling = true;
-          index--;
-          scrollToSection(index);
-        }
+    });
+  }, { threshold: 0.5 }); // Adjust the threshold as needed
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  const links = document.querySelectorAll('nav-right a');
+
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').substring(1);
+      const targetIndex = Array.from(sections).findIndex(section => section.id === targetId);
+
+      if (targetIndex !== -1 && targetIndex !== index) {
+        index = targetIndex;
+        scrollToSection(index);
       }
-    }
+    });
   });
 
   function scrollToSection(index) {
     const section = sections[index];
+    const offsetTop = section.getBoundingClientRect().top + window.scrollY;
 
     // Scroll to the top of the selected section
-    section.scrollIntoView({
+    window.scrollTo({
+      top: offsetTop,
       behavior: "smooth"
     });
 
@@ -55,12 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
           s.classList.add("off");
         }
       });
-
-      isScrolling = false;
-    }, 400); // Adjust the delay as needed for the smooth transition
+    }, 200); // Adjust the delay as needed for the smooth transition
   }
 });
-
 
 let scrollTimeout;
 
@@ -86,23 +81,3 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("resize", handleScroll);
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  const links = document.querySelectorAll('nav-right a');
-
-  links.forEach(link => {
-      link.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute('href').substring(1);
-          const targetElement = document.getElementById(targetId);
-
-          window.scrollTo({
-              top: targetElement.offsetTop - document.querySelector('nav').offsetHeight,
-              behavior: 'smooth'
-          });
-      });
-  });
-});
-
