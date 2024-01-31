@@ -10,11 +10,13 @@ function scrollCarousel() {
     scrollPosition += 1; // Adjust the scroll increment
     carouselContent.style.transform = `translateX(-${scrollPosition}px)`;
 
-    if (scrollPosition >= carouselContent.scrollWidth / 2) {
-        // If scrolled halfway, reset to the beginning
+    const itemWidth = carouselContent.firstElementChild.offsetWidth + 20; // Adjust for margin
+    const totalWidth = 2 * itemWidth * (carouselContent.childElementCount / 2);
+
+    if (scrollPosition >= totalWidth) {
+        // If scrolled past the total width, reset to the beginning
         scrollPosition = 0;
     }
 }
 
-setInterval(scrollCarousel, 50); 
-   
+setInterval(scrollCarousel, 50);

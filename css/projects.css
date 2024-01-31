@@ -7,26 +7,43 @@
 }
 
 #projects-content {
-    display: flex;
+    text-align: center; /* Center the inline-block elements */
     margin: 10px;
     transition: transform 0.5s ease-in-out;
+    white-space: nowrap; /* Prevent inline-block elements from wrapping */
+    border-radius: 10px;
 }
 
 .projects-item {
-    flex: 0 0 300px;
-    object-fit: cover;
-    
+    box-sizing: border-box;
+    margin: 10px;
+    display: inline-block;
+    width: calc(50% - 20px); /* Adjust the width as needed */
+    vertical-align: top; /* Align to the top of the container */
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
-
-
-.projects{
+.projects {
     box-sizing: border-box;
     height: 100%;
     position: relative;
     width: 100%;
     text-align: center;
     padding: 2%;
-    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     color: ghostwhite;
+    font-size: 16px; /* Set a base font size */
+}
+
+.project-images {
+    width: 100%;
+    height: auto;
+}
+
+/* Media Query for screens with a maximum width of 600 pixels (adjust as needed) */
+@media only screen and (max-width: 768px) {
+    .projects-item {
+        width: 100%;
+    }
 }

@@ -54,6 +54,16 @@
 
 }
 
+@media only screen and (max-width: 768px) {
+    .contact-img,
+    #info-img,
+    #socials {
+        display: block;
+        width: 100%;
+        margin: 10px auto; /* Add margin for better spacing */
+    }
+}
+
 .contact{
     position: relative;
     height: 100%;
