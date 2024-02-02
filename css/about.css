@@ -98,7 +98,13 @@
 
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
+
+    #git-container, .badges, .badges h1,#git-stats, #git-streak, .git-inline {
+        margin: 0 auto;
+        text-align: center;
+    }
+
     #git-info{
         padding: 5%;
         width: 80%;
